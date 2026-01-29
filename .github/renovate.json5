@@ -26,6 +26,10 @@
       enabled: false,
     },
     {
+      matchPackageNames: ["alpine"],
+      allowedVersions: "3.21",
+    },
+    {
       matchPackageNames: ["/^alpine_.*\/iputils/"],
       description: "Allow increased maxMajorIncrement for alpine iputils package",
       maxMajorIncrement: 0
