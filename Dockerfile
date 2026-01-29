@@ -18,15 +18,15 @@ COPY . /go/src/github.com/lightninglabs/lndmon/
 RUN cd /go/src/github.com/lightninglabs/lndmon/cmd/lndmon && go build
 
 # Start a new image
-FROM alpine:3.21@sha256:56fa17d2a7e7f168a043a2712e63aed1f8543aeafdcee47c58dcffe38ed51099 as final
+FROM alpine:3.23@sha256:25109184c71bdad752c8312a8623239686a9a2071e8825f20acb8f2198c3f659 as final
 
-# renovate: datasource=repology depName=alpine_3_21/bash versioning=loose
+# renovate: datasource=repology depName=alpine_3_23/bash versioning=loose
 ARG BASH_VERSION="5.2.37-r0"
 
-# renovate: datasource=repology depName=alpine_3_21/busybox versioning=loose
+# renovate: datasource=repology depName=alpine_3_23/busybox versioning=loose
 ARG BUSYBOX_VERSION="1.37.0-r12"
 
-# renovate: datasource=repology depName=alpine_3_21/iputils versioning=loose
+# renovate: datasource=repology depName=alpine_3_23/iputils versioning=loose
 ARG IPUTILS_VERSION="20240905-r0"
 
 COPY --from=builder /go/src/github.com/lightninglabs/lndmon/cmd/lndmon/lndmon /bin/
