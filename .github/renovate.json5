@@ -3,6 +3,7 @@
   configMigration: true,
   extends: [
     'config:recommended',
+    'customManagers:dockerfileVersions',
     'group:all',
   ],
   automerge: false,
@@ -33,21 +34,6 @@
       matchPackageNames: [
         '/^alpine_/',
       ],
-    },
-  ],
-  customManagers: [
-    {
-      description: 'Update packages set in Dockerfiles',
-      customType: 'regex',
-      fileMatch: [
-        '(^|/|\\.)([Dd]ocker|[Cc]ontainer)file$',
-        '(^|/)([Dd]ocker|[Cc]ontainer)file[^/]*$',
-      ],
-      matchStrings: [
-        '#\\srenovate:\\sdatasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?( extractVersion=(?<extractVersion>.*?))?\\s(ENV|ARG) .*?_VERSION="(?<currentValue>.*)"\\s',
-      ],
-      versioningTemplate: '{{#if versioning}}{{{versioning}}}{{else}}loose{{/if}}',
-      datasourceTemplate: '{{#if datasource}}{{{datasource}}}{{else}}repology{{/if}}',
     },
   ],
   dependencyDashboard: false,
