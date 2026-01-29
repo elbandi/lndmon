@@ -37,6 +37,11 @@
         '/^alpine_/',
       ],
     },
+    {
+      "matchPackageNames": ["/^alpine_.*iputils/"],
+      "description": "Allow increased maxMajorIncrement for alpine iputils package",
+      "maxMajorIncrement": 0
+    }
   ],
   dependencyDashboard: false,
   labels: [
