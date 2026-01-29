@@ -24,7 +24,7 @@ FROM alpine:3.21@sha256:c3f8e73fdb79deaebaa2037150150191b9dcbfba68b4a46d70103204
 ARG BASH_VERSION="5.2.37-r0"
 
 # renovate: datasource=repology depName=alpine_3_21/busybox versioning=loose
-ARG BUSYBOX_VERSION="1.37.0-r12"
+ARG BUSYBOX_VERSION="1.37.0-r14"
 
 # renovate: datasource=repology depName=alpine_3_21/iputils versioning=loose
 ARG IPUTILS_VERSION="20240905-r0"
