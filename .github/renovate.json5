@@ -14,7 +14,9 @@
   ],
   packageRules: [
     {
-      matchFileNames: [ "post_start/Dockerfile" ],
+      matchFileNames: [
+        'post_start/Dockerfile',
+      ],
       enabled: false,
     },
     {
@@ -39,9 +41,9 @@
     {
       description: 'Update packages set in Dockerfiles',
       customType: 'regex',
-      fileMatch: [
-        '(^|/|\\.)([Dd]ocker|[Cc]ontainer)file$',
-        '(^|/)([Dd]ocker|[Cc]ontainer)file[^/]*$',
+      managerFilePatterns: [
+        '/(^|/|\\.)([Dd]ocker|[Cc]ontainer)file$/',
+        '/(^|/)([Dd]ocker|[Cc]ontainer)file[^/]*$/',
       ],
       matchStrings: [
         '#\\srenovate:\\sdatasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?( extractVersion=(?<extractVersion>.*?))?\\s(ENV|ARG) .*?_VERSION="(?<currentValue>.*)"\\s',
