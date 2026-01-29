@@ -23,7 +23,7 @@ type lndConfig struct {
 	Host string `long:"host" description:"lnd instance rpc address"`
 
 	// Network is the network that lnd is running on, i.e. mainnet.
-	Network string `long:"network" description:"network to run on" choice:"regtest" choice:"testnet" choice:"mainnet" choice:"simnet" choice:"signet"`
+	Network string `long:"network" description:"network to run on" choice:"regtest" choice:"testnet" choice:"testnet4" choice:"mainnet" choice:"simnet" choice:"signet"`
 
 	// MacaroonDir is the path to lnd macaroons.
 	MacaroonDir string `long:"macaroondir" description:"Path to lnd macaroons"`
@@ -54,6 +54,9 @@ type config struct {
 
 	// DisableHtlc disables the collection of HTLCs metrics.
 	DisableHtlc bool `long:"disablehtlc" description:"Do not collect HTLCs metrics"`
+
+	// DisablePayments disables the collection of payments metrics.
+	DisablePayments bool `long:"disablepayments" description:"Do not collect payments metrics"`
 }
 
 var defaultConfig = config{
