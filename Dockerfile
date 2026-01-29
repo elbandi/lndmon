@@ -27,7 +27,7 @@ ARG BASH_VERSION="5.3.3-r1"
 ARG BUSYBOX_VERSION="1.37.0-r30"
 
 # renovate: datasource=repology depName=alpine_3_23/iputils versioning=loose
-ARG IPUTILS_VERSION="20240905-r0"
+ARG IPUTILS_VERSION="20250605-r0"
 
 COPY --from=builder /go/src/github.com/lightninglabs/lndmon/cmd/lndmon/lndmon /bin/
 
