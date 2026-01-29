@@ -21,7 +21,7 @@ RUN cd /go/src/github.com/lightninglabs/lndmon/cmd/lndmon && go build
 FROM alpine:3.23@sha256:25109184c71bdad752c8312a8623239686a9a2071e8825f20acb8f2198c3f659 as final
 
 # renovate: datasource=repology depName=alpine_3_23/bash versioning=loose
-ARG BASH_VERSION="5.2.37-r0"
+ARG BASH_VERSION="5.3.3-r1"
 
 # renovate: datasource=repology depName=alpine_3_23/busybox versioning=loose
 ARG BUSYBOX_VERSION="1.37.0-r12"
